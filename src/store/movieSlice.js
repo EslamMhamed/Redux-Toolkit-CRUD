@@ -1,0 +1,24 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    movies: [
+        {id: '1', name: 'Interstellar'},{id: '2', name: 'Harry Potter'}
+    ]
+}
+
+
+const movieSlice = createSlice({
+    name: 'movies',
+    initialState,
+    reducers:{
+        addMovie: (state, action)=>{
+            state.movies.push(action.payload)
+        },
+        removeMovie: ()=>{
+
+        }
+    }
+})
+
+export const {addMovie, removeMovie} = movieSlice.actions
+export default movieSlice.reducer
